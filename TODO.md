@@ -1,1 +1,1 @@
-- implement Undo/Redo operanions for TRAC's command line by <arrow up> and <arrow down> keys
+- implement Undo/Redo operanions for TRAC's command line by 'arrow up' and 'arrow down' keys
