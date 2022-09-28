@@ -1,0 +1,5 @@
+#!/bin/sh
+rm bin/myTRAC
+g++ src/main.cpp src/chains.cpp src/trac.cpp src/stack.cpp src/forms.cpp -obin/myTRAC
+#cp bin/myTRAC .
+
