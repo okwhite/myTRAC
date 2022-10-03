@@ -1,5 +1,5 @@
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include "../include/mytypes.h"
 #include "../include/chains.h"
@@ -7,6 +7,7 @@
 #include "../include/forms.h"
 #include "../include/TRAC.h"
 #include "../include/cmd.h"
+using namespace std;
 
 /*! \file trac.cpp
  *  TRAC engine algorithm
@@ -167,7 +168,7 @@ void RunTRAC( void ) {
     int vlen, el;
 
     step1:
-//std::cout << "step1:\n";
+//cout << "step1:\n";
     ClearProcessor();
     step2:
 //aChain->Print();
@@ -200,12 +201,12 @@ void RunTRAC( void ) {
         // each argument in neutral chain ends by '\0'
         nChain->Write( '\0' );
         if ( args->Push( nChain->GetPtr() ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
         if ( args->Push( argument ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
@@ -219,12 +220,12 @@ void RunTRAC( void ) {
         // each argument in neutral chain ends by '\0'
 //        nChain->Write( '\0' );
         if ( args->Push( nChain->GetPtr() ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
         if ( args->Push( activeFn ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
@@ -238,12 +239,12 @@ void RunTRAC( void ) {
         // each argument in neutral chain ends by \0
 //        nChain->Write( '\0' );
         if ( args->Push( nChain->GetPtr() ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
         if ( args->Push( neutralFn ) == -1 ) {
-            std::cout << "Stack 'args' overflow.\n";
+            cout << "Stack 'args' overflow.\n";
             nChain->Print();
             goto step1;
         }
@@ -266,19 +267,19 @@ void RunTRAC( void ) {
         while ( (ptr1 != activeFn) && (ptr1 != neutralFn) ) {
             // get argument type
             if ( (ptr1 = args->Pop()) == NULL ) {
-                std::cout << "Stack 'args' is empty\n";
+                cout << "Stack 'args' is empty\n";
                 nChain->Print();
                 goto step1;
             }
             // get argument
             if ( (ptr2 = args->Pop()) == NULL ) {
-                std::cout << "Stack 'args' is empty\n";
+                cout << "Stack 'args' is empty\n";
                 nChain->Print();
                 goto step1;
             }
             // put argument onto function parameter stack
             if ( args1->Push( ptr2 ) == -1 ) {
-                std::cout << "Stack 'args1' overflow.\n";
+                cout << "Stack 'args1' overflow.\n";
                 nChain->Print();
                 goto step1;
             }

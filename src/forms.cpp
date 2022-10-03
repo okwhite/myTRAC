@@ -1,8 +1,9 @@
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include "../include/mytypes.h"
 #include "../include/forms.h"
+using namespace std;
 
 /*! \file forms.cpp
  *  Form implementation
@@ -158,12 +159,12 @@ Forms::~Forms( void ) {
 /*!
 */
 void Forms::AddForm( Form *frm ) {
-//    std::cout << "AddForm(): AddForm(" << frm << ")\n";
-//    std::cout << "AddForm():firstform=" << this->firstform << "\n";
-//    std::cout << "AddForm():lastform=" << this->lastform << "\n";
+//    cout << "AddForm(): AddForm(" << frm << ")\n";
+//    cout << "AddForm():firstform=" << this->firstform << "\n";
+//    cout << "AddForm():lastform=" << this->lastform << "\n";
 
     if (this->firstform == (Form *)NULL) {	// if the list is empty
-	std::cout << "Formlist is empty\n";
+	cout << "Formlist is empty\n";
 	this->firstform = frm;
 	this->lastform = this->firstform;
     }
@@ -172,12 +173,12 @@ void Forms::AddForm( Form *frm ) {
 	frm->sPrev(this->lastform);
 	this->lastform = frm;
     }
-//    std::cout << "AddForm(): firstform=" << this->firstform << "\n";
-//    std::cout << "AddForm(): firstform->name=" << this->firstform->gName() << "\n";
-//    std::cout << "AddForm(): firstform->body=" << this->firstform->gBody() << "\n";
-//    std::cout << "AddForm(): lastform=" << this->lastform << "\n";
-//    std::cout << "AddForm(): lastform->name=" << this->lastform->gName() << "\n";
-//    std::cout << "AddForm(): lastform->body=" << this->lastform->gBody() << "\n";
+//    cout << "AddForm(): firstform=" << this->firstform << "\n";
+//    cout << "AddForm(): firstform->name=" << this->firstform->gName() << "\n";
+//    cout << "AddForm(): firstform->body=" << this->firstform->gBody() << "\n";
+//    cout << "AddForm(): lastform=" << this->lastform << "\n";
+//    cout << "AddForm(): lastform->name=" << this->lastform->gName() << "\n";
+//    cout << "AddForm(): lastform->body=" << this->lastform->gBody() << "\n";
 };
 
 /************************************************************************/
@@ -188,14 +189,14 @@ Form * Forms::GetForm( String fname ) {
     Form *f, *found;
     int r;
 
-//std::cout << "GetForm(): " << "GetForm(" << fname << ")\n";
+//cout << "GetForm(): " << "GetForm(" << fname << ")\n";
     found = (Form *)NULL;
     f = this->firstform;
     while (f != (Form *)NULL) {	// Scan the list of forms
-//std::cout << "GetForm(): " << "f->body=" << f->gBody() << "\n";
-//std::cout << "GetForm(): " << "f=" << f << "\n";
-//std::cout << "GetForm(): " << "f->name=" << f->gName() << "\n";
-//std::cout << "GetForm(): " << "fname=" << fname << "\n";
+//cout << "GetForm(): " << "f->body=" << f->gBody() << "\n";
+//cout << "GetForm(): " << "f=" << f << "\n";
+//cout << "GetForm(): " << "f->name=" << f->gName() << "\n";
+//cout << "GetForm(): " << "fname=" << fname << "\n";
 	if ((r = strncmp(f->gName(), fname, strlen(fname))) == 0) {
 		found = f;
 		break;
@@ -250,9 +251,9 @@ void Forms::KillAll( void ) {
     while (frm != (Form *)NULL) {	// while the list is not empty
 	victim = frm;
 	frm = frm->gNext();
-//std::cout << "kill victim : " << victim << "\n";
+//cout << "kill victim : " << victim << "\n";
 	delete victim;
-//std::cout << "frm : " << frm << "\n";
+//cout << "frm : " << frm << "\n";
     }
     firstform = lastform = (Form *)NULL;
 };

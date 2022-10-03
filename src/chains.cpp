@@ -1,7 +1,8 @@
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include "../include/chains.h"
+using namespace std;
 
 /*! \file chains.cpp
  *  Chains implementation
@@ -130,10 +131,10 @@ void Active::Print( void ) {
             *(bp++) = *(ptr + i);
         };
         *bp = '\0';
-        std::cout << buff;
+        cout << buff;
         delete buff;
     };
-    std::cout << "\n";
+    cout << "\n";
     return;
 };
 
@@ -227,9 +228,9 @@ void Neutral::Print( void ) {
                 *(bp++) = *(begin + i);
         };
         *bp = '\0';
-        std::cout << buff;
+        cout << buff;
         delete buff;
     };
-    std::cout << "\n";
+    cout << "\n";
     return;
 };

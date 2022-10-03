@@ -1,1 +1,2 @@
-- implement Undo/Redo operanions for TRAC's command line by 'arrow up' and 'arrow down' keys
+- IMPLEMENT Undo/Redo operanions for TRAC's command line by 'arrow up' and 'arrow down' keys
+- FIX error in realization of #(cm,X) function

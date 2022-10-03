@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include <cstdio>
 #include "flib.h"
 #include <iostream>
+using namespace std;
+
 #define CMD_BUF 2048
 
 /*! \file cmd.h
@@ -43,7 +45,7 @@ String _rs_( void )
     // To ignore characters after PRG_END in input buffer
 //    while ((c = getchar()) != '\n' && c != EOF);
 
-//    std::cout << "The program ended\n";
+//    cout << "The program ended\n";
 
     return val;
 }
@@ -74,7 +76,7 @@ String _ps_( void )
     String arg;
 
     arg = get_arg();
-    std::cout << arg;
+    cout << arg;
 
     return (String)"";
 }
@@ -89,16 +91,16 @@ String _pf_( void )
     String formname;
 
     formname = get_arg();
-//std::cout << "_pf_(): " << "formname=" << formname << "\n";
+//cout << "_pf_(): " << "formname=" << formname << "\n";
 
     if (formname != NULL) {
 	form = forms->GetForm(formname);
-//std::cout << "_pf_(): " << form << "=GetForm(" << formname << ")\n";
+//cout << "_pf_(): " << form << "=GetForm(" << formname << ")\n";
 	if (form != (Form *)NULL) {
-//		std::cout << form << "->ptr=" << form->ptr << "\n";
-//		std::cout << "&" << form << "->body=" << &form->body << "\n";
-		std::cout << form->gBody();
-//		std::cout << "_pf_(): " << form << "->name=" << form->gName() << "\n";
+//		cout << form << "->ptr=" << form->ptr << "\n";
+//		cout << "&" << form << "->body=" << &form->body << "\n";
+		cout << form->gBody();
+//		cout << "_pf_(): " << form << "->name=" << form->gName() << "\n";
 	}
     }
  
@@ -117,7 +119,7 @@ String _add_( void )
  
     arg1 = get_arg();
     arg2 = get_arg();
-    res = std::stoi(arg1)+std::stoi(arg2);
+    res = stoi(arg1)+stoi(arg2);
     
     itoa(res, arg1, 10);
     return arg1;
@@ -134,7 +136,7 @@ String _mul_( void )
  
     arg1 = get_arg();
     arg2 = get_arg();
-    res = std::stoi(arg1)*std::stoi(arg2);
+    res = stoi(arg1)*stoi(arg2);
     
     itoa(res, arg1, 10);
     return arg1;
@@ -173,10 +175,10 @@ String _ds_( void )
     // Add the new form to the list
     forms->KillForm(formname);	// Prevent form name duplication
     forms->AddForm(form);
-//std::cout << "_ds_(): " << "form=" << form << "\n";
-//std::cout << "_ds_(): " << "form->name=" << form->gName() << "\n";
-//std::cout << "_ds_(): " << "&form->body=" << &form->body << "\n";
-//std::cout << "_ds_(): " << "form->body=" << form->gBody() << "\n";
+//cout << "_ds_(): " << "form=" << form << "\n";
+//cout << "_ds_(): " << "form->name=" << form->gName() << "\n";
+//cout << "_ds_(): " << "&form->body=" << &form->body << "\n";
+//cout << "_ds_(): " << "form->body=" << form->gBody() << "\n";
  
     return (String)"";
 }
