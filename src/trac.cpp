@@ -64,6 +64,9 @@ void InitTRAC( void ) {
     mnem[k] = (String)"cm";
     impl[k] = _cm_;
     k++;
+    mnem[k] = (String)"meta";
+    impl[k] = _meta_;
+    k++;
     mnem[k] = (String)"ds";
     impl[k] = _ds_;
     k++;

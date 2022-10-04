@@ -154,8 +154,22 @@ String _cm_( void )
     arg = get_arg();
     if ( *arg != '\0')
         PRG_END = *arg;
-
+//cout << "meta-symbol = " << PRG_END << endl;
     return (String)"";
+}
+
+/***************************************************************************/
+//!
+/*!  _meta_ - "return current meta-symbol (the end-of-string symbol)"
+*/
+String _meta_( void )
+{
+    char *meta;
+    meta = new char[2];
+    meta[0] = meta[1] = '\0';
+    *meta = PRG_END;
+//cout << "meta-symbol = " << meta << endl;
+    return (String)meta;
 }
 
 /* FORMS */

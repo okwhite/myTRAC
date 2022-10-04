@@ -1,4 +1,4 @@
-#define CMD_COUNT 48
+#define CMD_COUNT 50
 
 const char *CRLF = "CR-LF";	// CRLF in TRAC syntax
 char PRG_END = '\x27';		// TRAC program end character "'"
@@ -30,6 +30,7 @@ static String (*impl[CMD_COUNT])( void );	// Build-in command implementation fun
 //String _mul_( void );
 // Services
 //String _cm_( void );
+//String _meta_( void );
 // Forms
 //String _ds_( void );
 
