@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-#define VERSION "alpha"
+#define VERSION "0.1.1(alpha)"
 
 void StartMsg()
 {
-    cout << "myTRAC system  version " << VERSION << ". 2004\n\n";
+    cout << "myTRAC system  version " << VERSION << endl;
 }
 
 void StopMsg()
