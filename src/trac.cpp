@@ -6,7 +6,7 @@
 #include "../include/stack.h"
 #include "../include/forms.h"
 #include "../include/TRAC.h"
-#include "../include/cmd.h"
+#include "../include/macro.h"
 using namespace std;
 
 /*! \file trac.cpp
@@ -26,13 +26,13 @@ void ClearProcessor( void ) {
         delete args;
     if ( args1 != NULL)
         delete args1;
-    if ( cmd != NULL)
-        delete cmd;
+//    if ( cmd != NULL)
+//        delete cmd;
     aChain = new Active( "#(ps,(CR-LF))#(ps,#(rs))" );
     nChain = new Neutral();
     args = new Stack();
     args1 = new Stack();
-    cmd = new String;
+//    cmd = new String;
 };
 
 /***************************************************************************/
@@ -44,7 +44,7 @@ void InitTRAC( void ) {
     if ( forms != NULL)
         delete forms;
     forms = new Forms();
-    for ( int i = 0; i < CMD_COUNT; i++) {
+    for ( int i = 0; i < MACRO_COUNT; i++) {
         mnem[i] = (String)"";
         impl[i] = _null_;
     }
@@ -69,6 +69,9 @@ void InitTRAC( void ) {
     k++;
     mnem[k] = (String)"ds";
     impl[k] = _ds_;
+    k++;
+    mnem[k] = (String)"ds";
+    impl[k] = _ss_;
     k++;
     mnem[k] = (String)"dd";
     impl[k] = _dd_;
@@ -103,25 +106,25 @@ void KillTRAC( void ) {
         delete nChain;
     if ( forms != NULL)
         delete forms;
-    if ( list_of_forms != NULL)	// defined in cmd.h
+    if ( list_of_forms != NULL)	// defined in macro.h
         delete list_of_forms;
     if ( args != NULL)
         delete args;
     if ( args1 != NULL)
         delete args1;
-    if ( cmd != NULL)
-        delete cmd;
+//    if ( cmd != NULL)
+//        delete cmd;
 };
 
 /***************************************************************************/
 //!
-/*!  GetCmdImpl
+/*!  GetMacroImpl
 */
-int GetCmdImpl( String mn ) {
+int GetMacroImpl( String mn ) {
     int retVal = -1;
     int r;
 
-    for ( int i = 0; i < CMD_COUNT; i++) {
+    for ( int i = 0; i < MACRO_COUNT; i++) {
         if ( (r = strcmp( mn, mnem[ i ])) == 0 ) {
             retVal = i;
             break;
@@ -136,21 +139,21 @@ int GetCmdImpl( String mn ) {
 /*!  Eval
 */
 int Eval( char *&val ) {
-    String cmdMnem;
+    String macroMnem;
     int valLength, r;
-    int cmdImpl;
+    int macroImpl;
 
     val = (char *)"";
     valLength = 0;
 
     // TODO: FORMs processing
 
-    // a built-in command executing
-    if ( (cmdMnem = args1->Pop()) != NULL ) {
-        if ( (cmdImpl = GetCmdImpl( cmdMnem ) ) != (-1) ) {
-            val = (impl[ cmdImpl ])();
+    // a built-in macro executing
+    if ( (macroMnem = args1->Pop()) != NULL ) {
+        if ( (macroImpl = GetMacroImpl( macroMnem ) ) != (-1) ) {
+            val = (impl[ macroImpl ])();
             valLength = (val != NULL) ? strlen( val ) : 0;
-        } else if ( (r = strcmp( cmdMnem, "bye")) == 0 ) {
+        } else if ( (r = strcmp( macroMnem, "bye")) == 0 ) {
             valLength = -1;
         }
     }
