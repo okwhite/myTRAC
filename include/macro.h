@@ -6,13 +6,13 @@ using namespace std;
 #define CMD_BUF 2048
 
 /*! \file cmd.h
- *  TRAC's built-in commands implementation
+ *  TRAC's built-in macros implementation
 */
 
 /* AUXILIARY FUNCTIONS */
 /***************************************************************************/
 //!
-/*!  get_arg  - "get next argument of TRAC's function"
+/*!  get_arg  - "get next argument of TRAC's macro"
 */
 String get_arg(void)
 {
@@ -81,32 +81,6 @@ String _ps_( void )
     return (String)"";
 }
 
-/***************************************************************************/
-//!
-/*!  _pf_ - "print form"
-*/
-String _pf_( void )
-{
-    Form *form;
-    String formname;
-
-    formname = get_arg();
-//cout << "_pf_(): " << "formname=" << formname << "\n";
-
-    if (formname != NULL) {
-	form = forms->GetForm(formname);
-//cout << "_pf_(): " << form << "=GetForm(" << formname << ")\n";
-	if (form != (Form *)NULL) {
-//		cout << form << "->ptr=" << form->ptr << "\n";
-//		cout << "&" << form << "->body=" << &form->body << "\n";
-		cout << form->gBody();
-//		cout << "_pf_(): " << form << "->name=" << form->gName() << "\n";
-	}
-    }
- 
-    return (String)"";
-}
-
 /* INTEGER ARITHMETIC */
 /***************************************************************************/
 //!
@@ -145,7 +119,7 @@ String _mul_( void )
 /* SERVICES */
 /***************************************************************************/
 //!
-/*!  _cm_ - "change the meta-symbol (the end-of-string symbol)"
+/*!  _cm_ - "change meta character (the end-of-string character)"
 */
 String _cm_( void )
 {
@@ -160,7 +134,7 @@ String _cm_( void )
 
 /***************************************************************************/
 //!
-/*!  _meta_ - "return current meta-symbol (the end-of-string symbol)"
+/*!  _meta_ - "return current meta character"
 */
 String _meta_( void )
 {
@@ -199,10 +173,45 @@ String _ds_( void )
 
 /***************************************************************************/
 //!
+/*!  _ss_ - "segment string"
+*/
+String _ss_( void )
+{
+    return (String)"";
+}
+
+/***************************************************************************/
+//!
 /*!  _dd_ - "delete definition"
 */
 String _dd_( void )
 {
+    return (String)"";
+}
+
+/***************************************************************************/
+//!
+/*!  _pf_ - "print form"
+*/
+String _pf_( void )
+{
+    Form *form;
+    String formname;
+
+    formname = get_arg();
+//cout << "_pf_(): " << "formname=" << formname << "\n";
+
+    if (formname != NULL) {
+	form = forms->GetForm(formname);
+//cout << "_pf_(): " << form << "=GetForm(" << formname << ")\n";
+	if (form != (Form *)NULL) {
+//		cout << form << "->ptr=" << form->ptr << "\n";
+//		cout << "&" << form << "->body=" << &form->body << "\n";
+		cout << form->gBody();
+//		cout << "_pf_(): " << form << "->name=" << form->gName() << "\n";
+	}
+    }
+ 
     return (String)"";
 }
 
@@ -235,7 +244,7 @@ String _ln_( void )
     return list_of_forms;
 }
 
-/* 'COMMAND' "" */
+/* 'MACRO' "" */
 /***************************************************************************/
 //!
 /*!  _null_  - ""
