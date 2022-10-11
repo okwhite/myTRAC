@@ -5,7 +5,7 @@ using namespace std;
 
 #define CMD_BUF 2048
 
-/*! \file cmd.h
+/*! \file macro.h
  *  TRAC's built-in macros implementation
 */
 
@@ -76,7 +76,8 @@ String _ps_( void )
     String arg;
 
     arg = get_arg();
-    cout << arg;
+    if(*arg != '\0')
+        cout << arg;
 
     return (String)"";
 }

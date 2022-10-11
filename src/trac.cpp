@@ -26,13 +26,10 @@ void ClearProcessor( void ) {
         delete args;
     if ( args1 != NULL)
         delete args1;
-//    if ( cmd != NULL)
-//        delete cmd;
     aChain = new Active( "#(ps,(CR-LF))#(ps,#(rs))" );
     nChain = new Neutral();
     args = new Stack();
     args1 = new Stack();
-//    cmd = new String;
 };
 
 /***************************************************************************/
@@ -70,7 +67,7 @@ void InitTRAC( void ) {
     mnem[k] = (String)"ds";
     impl[k] = _ds_;
     k++;
-    mnem[k] = (String)"ds";
+    mnem[k] = (String)"ss";
     impl[k] = _ss_;
     k++;
     mnem[k] = (String)"dd";
@@ -112,8 +109,6 @@ void KillTRAC( void ) {
         delete args;
     if ( args1 != NULL)
         delete args1;
-//    if ( cmd != NULL)
-//        delete cmd;
 };
 
 /***************************************************************************/
@@ -167,7 +162,7 @@ int Eval( char *&val ) {
 /*!  RunTRAC
 */
 void RunTRAC( void ) {
-    char *ch = (char *)"";
+    char *ch = (char *)"";  // current position in Active chain
     char *buff = (char *)"";
     char *ptr1, *ptr2;
     char *value;
