@@ -32,13 +32,32 @@ String get_arg(void)
 */
 String _rs_( void )
 {
-    char *val, *ptr;
+    String val;
+    String ptr;
     int c;
 
     ptr = val = new char[CMD_BUF];
     while ( ((c = getchar()) != EOF) && (c != PRG_END) )
     {
         *ptr = c;
+        ++ptr;
+    }
+    if( c == EOF) {
+        *ptr = PRG_END;
+        ++ptr;
+        *ptr = '#';
+        ++ptr;
+        *ptr = '(';
+        ++ptr;
+        *ptr = 'b';
+        ++ptr;
+        *ptr = 'y';
+        ++ptr;
+        *ptr = 'e';
+        ++ptr;
+        *ptr = ')';
+        ++ptr;
+        *ptr = PRG_END;
         ++ptr;
     }
     *ptr = '\0';
