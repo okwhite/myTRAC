@@ -6,3 +6,6 @@ See:
 2. Mooers.  "TRAC, A procedure-describing language for the reactive	typewriter."  CACM 9:3 (1966) pp. 215-219.
 3. Peter Wegner. "Programming languages, information structures and machine organization." McGraw-hill book company (1968) pp. 162-174.
 
+BUILD & RUN
+Use 'build' to build executable file myTRAC (Linux)
+Use 'run' to activate TRAC system
