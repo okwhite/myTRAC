@@ -6,6 +6,7 @@
 #include "../include/stack.h"
 #include "../include/forms.h"
 #include "../include/TRAC.h"
+#include "../include/flib.h"
 #include "../include/macro.h"
 using namespace std;
 
