@@ -1,3 +1,6 @@
+#ifndef VER
+#define VER
+
 #include <iostream>
 using namespace std;
 
@@ -12,3 +15,5 @@ void StopMsg()
 {
     cout << "\n\nmyTRAC system stopped.\n\n";
 }
+
+#endif

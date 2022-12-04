@@ -1,3 +1,6 @@
+#ifndef FORMS
+#define FORMS
+
 /*! \file forms.h
  *  form list declaration
 */
@@ -49,3 +52,5 @@ protected:
     int LoadForms();
     int SaveForms();
 };
+
+#endif

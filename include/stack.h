@@ -1,3 +1,6 @@
+#ifndef STACK
+#define STACK
+
 #define STACKSIZE 64	// Stack depth
 
 /*! \file stack.h
@@ -22,3 +25,5 @@ protected:
     char **bottom;
     int aDepth, mDepth;
 };
+
+#endif

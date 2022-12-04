@@ -1,3 +1,6 @@
+#ifndef MACRO
+#define MACRO
+
 #include <cstdio>
 #include <iostream>
 using namespace std;
@@ -272,3 +275,5 @@ String _null_( void )
 {
     return (String)"";
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef CHAINS
+#define CHAINS
+
 #define CHAINMEM	1024	// memory size limit for a chain (characters)
 
 
@@ -57,3 +60,4 @@ public:
     void Cut( char * );
     void Print( void );
 };
+#endif

@@ -1,3 +1,6 @@
+#ifndef TRAC
+#define TRAC
+
 #define MACRO_COUNT 50
 
 const char *CRLF = "CR-LF";	// CRLF in TRAC syntax
@@ -40,5 +43,7 @@ static String (*impl[MACRO_COUNT])( void );	// Build-in command implementation f
 //String _ln_( void );
 // Other
 //String _null_( void );
+
+#endif
 
 
