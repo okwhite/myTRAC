@@ -2,8 +2,7 @@
 # make file for MyTRAC system
 #----------------------------------------------------------------------
 # Makefile
-# # Revision 1.0  2022/11/12 
-# Initial revision
+# # Revision 1.1  2022/12/05 
 #
 #----------------------------------------------------------------------
 
@@ -23,15 +22,15 @@ myTRAC: $(OBJ)
 # DEPENDENCIES
 
 bin/main.o: include/version.h
-	$(CPP) $(CFLAGS) bin/main.o src/main.cpp
+	$(CPP) $(CFLAGS) $@ src/main.cpp
 bin/chains.o: include/chains.h
-	$(CPP) $(CFLAGS) bin/chains.o src/chains.cpp
+	$(CPP) $(CFLAGS) $@ src/chains.cpp
 bin/forms.o: include/mytypes.h include/forms.h
-	$(CPP) $(CFLAGS) bin/forms.o src/forms.cpp
+	$(CPP) $(CFLAGS) $@ src/forms.cpp
 bin/stack.o: include/stack.h
-	$(CPP) $(CFLAGS) bin/stack.o src/stack.cpp
+	$(CPP) $(CFLAGS) $@ src/stack.cpp
 bin/trac.o: include/mytypes.h include/chains.h include/stack.h include/forms.h \
 	    include/TRAC.h include/macro.h include/flib.h 
-	$(CPP) $(CFLAGS) bin/trac.o src/trac.cpp
+	$(CPP) $(CFLAGS) $@ src/trac.cpp
 
 # EOF : Makefile
