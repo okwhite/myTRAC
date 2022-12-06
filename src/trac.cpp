@@ -27,7 +27,7 @@ void ClearProcessor( void ) {
         delete args;
     if ( args1 != NULL)
         delete args1;
-    aChain = new Active( "#(ps,(CR-LF))#(ps,#(rs))" );
+    aChain = new Active( "#(ps,(CR-LF))#(ps,> )#(ps,#(rs))" );
     nChain = new Neutral();
     args = new Stack();
     args1 = new Stack();
