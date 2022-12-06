@@ -31,6 +31,8 @@ static String (*impl[MACRO_COUNT])( void );	// Build-in command implementation f
 // Integer Arithmetic
 //String _add_( void );
 //String _mul_( void );
+//String _sub_( void );
+//String _div_( void );
 // Services
 //String _cm_( void );
 //String _meta_( void );

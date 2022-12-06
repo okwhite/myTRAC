@@ -27,7 +27,7 @@ void ClearProcessor( void ) {
         delete args;
     if ( args1 != NULL)
         delete args1;
-    aChain = new Active( "#(ps,(CR-LF))#(ps,> )#(ps,#(rs))" );
+    aChain = new Active( "#(ps,(CR-LF))#(ps,> )#(ps,#(rs))" );  // Set initial command line (with a prompt '> ')
     nChain = new Neutral();
     args = new Stack();
     args1 = new Stack();
@@ -91,6 +91,18 @@ void InitTRAC( void ) {
     k++;
     mnem[k] = (String)"*";
     impl[k] = _mul_;
+    k++;
+    mnem[k] = (String)"sub";
+    impl[k] = _sub_;
+    k++;
+    mnem[k] = (String)"-";
+    impl[k] = _sub_;
+    k++;
+    mnem[k] = (String)"div";
+    impl[k] = _div_;
+    k++;
+    mnem[k] = (String)"/";
+    impl[k] = _div_;
 };
 
 /***************************************************************************/

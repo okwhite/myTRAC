@@ -138,6 +138,40 @@ String _mul_( void )
     return arg1;
 }
 
+/***************************************************************************/
+//!
+/*!  _sub_ - "sub (arg1-arg2)"
+*/
+String _sub_( void )
+{
+    String arg1, arg2;
+    int res;
+ 
+    arg1 = get_arg();
+    arg2 = get_arg();
+    res = stoi(arg1)-stoi(arg2);
+    
+    itoa(res, arg1, 10);
+    return arg1;
+}
+
+/***************************************************************************/
+//!
+/*!  _div_ - "div (arg1/arg2)"
+*/
+String _div_( void )
+{
+    String arg1, arg2;
+    int res;
+ 
+    arg1 = get_arg();
+    arg2 = get_arg();
+    res = stoi(arg1)/stoi(arg2);
+    
+    itoa(res, arg1, 10);
+    return arg1;
+}
+
 /* SERVICES */
 /***************************************************************************/
 //!
