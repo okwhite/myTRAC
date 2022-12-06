@@ -21,15 +21,15 @@ myTRAC: $(OBJ)
 
 # DEPENDENCIES
 
-bin/main.o: include/version.h
+bin/main.o: src/main.cpp include/version.h
 	$(CPP) $(CFLAGS) $@ src/main.cpp
-bin/chains.o: include/chains.h
+bin/chains.o: src/chains.cpp include/chains.h
 	$(CPP) $(CFLAGS) $@ src/chains.cpp
-bin/forms.o: include/mytypes.h include/forms.h
+bin/forms.o: src/forms.cpp include/mytypes.h include/forms.h
 	$(CPP) $(CFLAGS) $@ src/forms.cpp
-bin/stack.o: include/stack.h
+bin/stack.o: src/stack.cpp include/stack.h
 	$(CPP) $(CFLAGS) $@ src/stack.cpp
-bin/trac.o: include/mytypes.h include/chains.h include/stack.h include/forms.h \
+bin/trac.o: src/trac.cpp include/mytypes.h include/chains.h include/stack.h include/forms.h \
 	    include/TRAC.h include/macro.h include/flib.h 
 	$(CPP) $(CFLAGS) $@ src/trac.cpp
 
