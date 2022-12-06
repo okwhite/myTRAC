@@ -8,7 +8,7 @@
 
 CFLAGS = -c -o
 HDRS   = include/chains.h include/flib.h include/forms.h include/macro.h include/mytypes.h \
-         include/stack.h include/TRAC.h include/version.h 
+         include/stack.h include/TRAC.h include/version.h
 CPP = g++
 
 OBJ = bin/main.o bin/chains.o bin/forms.o bin/stack.o bin/trac.o
@@ -30,7 +30,7 @@ bin/forms.o: src/forms.cpp include/mytypes.h include/forms.h
 bin/stack.o: src/stack.cpp include/stack.h
 	$(CPP) $(CFLAGS) $@ src/stack.cpp
 bin/trac.o: src/trac.cpp include/mytypes.h include/chains.h include/stack.h include/forms.h \
-	    include/TRAC.h include/macro.h include/flib.h 
+	    include/TRAC.h include/macro.h include/flib.h
 	$(CPP) $(CFLAGS) $@ src/trac.cpp
 
 # EOF : Makefile

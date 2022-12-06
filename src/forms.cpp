@@ -164,7 +164,7 @@ void Forms::AddForm( Form *frm ) {
 //    cout << "AddForm():lastform=" << this->lastform << "\n";
 
     if (this->firstform == (Form *)NULL) {	// if the list is empty
-	cout << "Formlist is empty\n";
+	cout << "No forms. '" << frm->gName() << "' will be first!\n";
 	this->firstform = frm;
 	this->lastform = this->firstform;
     }
@@ -278,8 +278,10 @@ String Forms::GetList( String delimiter ) {
 	fname = frm->gName();
 	nl = strlen(fname);
 	if ((dl+nl) < (&res[size]-ptr)) {
-		memcpy(ptr, delimiter, dl);
-		ptr = ptr + dl;
+        if (frm != firstform) {
+            memcpy(ptr, delimiter, dl);
+            ptr = ptr + dl;
+        }
 		memcpy(ptr, fname, nl);
 		ptr = ptr + nl;
 		*ptr = '\0';
