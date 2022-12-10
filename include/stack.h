@@ -1,5 +1,5 @@
-#ifndef STACK
-#define STACK
+#ifndef __STACK
+#define __STACK
 
 #define STACKSIZE 64	// Stack depth
 
@@ -26,4 +26,4 @@ protected:
     int aDepth, mDepth;
 };
 
-#endif
+#endif  //__STACK

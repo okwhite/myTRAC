@@ -1,5 +1,5 @@
-#ifndef FORMS
-#define FORMS
+#ifndef __FORMS
+#define __FORMS
 
 /*! \file forms.h
  *  form list declaration
@@ -53,4 +53,4 @@ protected:
     int SaveForms();
 };
 
-#endif
+#endif  //__FORMS

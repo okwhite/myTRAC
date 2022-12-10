@@ -1,5 +1,5 @@
-#ifndef MACRO
-#define MACRO
+#ifndef __MACRO
+#define __MACRO
 
 #include <cstdio>
 #include <iostream>
@@ -310,4 +310,4 @@ String _null_( void )
     return (String)"";
 }
 
-#endif
+#endif  //__MACRO

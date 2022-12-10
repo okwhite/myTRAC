@@ -1,5 +1,5 @@
-#ifndef FLIB
-#define FLIB
+#ifndef __FLIB
+#define __FLIB
 
 /*
 #include <stdio.h>
@@ -38,4 +38,4 @@ void itoa(int value, char* str, int base) {
 	strreverse(str,wstr-1);
 }
 
-#endif
+#endif	//__FLIB

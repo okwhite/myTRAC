@@ -1,5 +1,5 @@
-#ifndef TRAC
-#define TRAC
+#ifndef __TRAC
+#define __TRAC
 
 #define MACRO_COUNT 50
 
@@ -46,6 +46,4 @@ static String (*impl[MACRO_COUNT])( void );	// Build-in command implementation f
 // Other
 //String _null_( void );
 
-#endif
-
-
+#endif  //__TRAC
